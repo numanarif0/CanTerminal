@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <object class="GtkWindow" id="main_window">
+    <property name="title">STM32 Seri Terminal</property>
+    <property name="default-width">600</property>
+    <property name="default-height">500</property>
+    <child>
+      <object class="GtkBox">
+        <property name="orientation">vertical</property>
+        <property name="margin-top">10</property>
+        <property name="margin-bottom">10</property>
+        <property name="margin-start">10</property>
+        <property name="margin-end">10</property>
+        <property name="spacing">10</property>
+        <child>
+          <object class="GtkBox" id="send_hbox">
+            <property name="orientation">horizontal</property>
+            <property name="spacing">10</property>
+            <child>
+              <object class="GtkLabel">
+                <property name="label">Port:</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkComboBoxText" id="combo_ports">
+                <property name="hexpand">true</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="button_scan_ports">
+                <property name="label">Yenile</property>
+                <property name="icon-name">view-refresh-symbolic</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="button_connect">
+                <property name="label">Bağlan</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="button_show_led_window">
+                <property name="label">LED Arayüzü</property>
+                <property name="icon-name">emblem-system-symbolic</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow">
+            <property name="hexpand">true</property>
+            <property name="vexpand">true</property>
+            <property name="hscrollbar-policy">automatic</property>
+            <property name="vscrollbar-policy">automatic</property>
+            <child>
+              <object class="GtkTextView" id="log_view">
+                <property name="editable">false</property>
+                <property name="monospace">true</property>
+                <property name="wrap-mode">word-char</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkEntry" id="entry_command">
+            <property name="placeholder-text">Gönderilecek komutu yazıp Enter'a basın...</property>
+            <property name="hexpand">true</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkStatusbar" id="statusbar"/>
+        </child>
+      </object>
+    </child>
+  </object>
+
+  <object class="GtkWindow" id="led_window">
+    <property name="title">LED Kontrol Paneli</property>
+    <property name="default-width">250</property>
+    <property name="default-height">200</property>
+    <property name="hide-on-close">true</property>
+    <child>
+      <object class="GtkGrid">
+        <property name="margin-top">15</property>
+        <property name="margin-bottom">15</property>
+        <property name="margin-start">15</property>
+        <property name="margin-end">15</property>
+        <property name="row-spacing">10</property>
+        <property name="column-spacing">10</property>
+        <property name="halign">center</property>
+        <property name="valign">center</property>
+        <child>
+          <object class="GtkToggleButton" id="toggle_led1">
+            <property name="label">LED 1</property>
+            <property name="hexpand">true</property>
+            <property name="vexpand">true</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkToggleButton" id="toggle_led2">
+            <property name="label">LED 2</property>
+            <property name="hexpand">true</property>
+            <property name="vexpand">true</property>
+            <layout>
+              <property name="column">1</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkToggleButton" id="toggle_led3">
+            <property name="label">LED 3</property>
+            <property name="hexpand">true</property>
+            <property name="vexpand">true</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="GtkToggleButton" id="toggle_led4">
+            <property name="label">LED 4</property>
+            <property name="hexpand">true</property>
+            <property name="vexpand">true</property>
+            <layout>
+              <property name="column">1</property>
+              <property name="row">1</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
